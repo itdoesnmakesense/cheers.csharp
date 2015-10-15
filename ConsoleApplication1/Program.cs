@@ -52,7 +52,10 @@ namespace ConsoleApplication1
                 int differenceInDays = ts.Days;
 
                 Console.WriteLine("Your birthday is " + differenceInDays + " days away!");
-
+            }
+            if (input == DateTime.Today)
+            {
+                Console.WriteLine("Happy Birthday!");
             }
            
             System.Console.WriteLine("Press any key to exit");
