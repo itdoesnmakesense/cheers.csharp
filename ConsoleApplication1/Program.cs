@@ -12,21 +12,21 @@ namespace ConsoleApplication1
         {
             System.Console.WriteLine("Hey There! What's your name?");
            string name = System.Console.ReadLine(); 
-           for (int i = 0; i < name.Length; i++)
+           foreach(char letter in name.ToLower())
            {
-               bool article = "halfnorsemix".IndexOf(name[i].ToString(), StringComparison.InvariantCultureIgnoreCase) >= 0;
+               bool article = "halfnorsemix".IndexOf(letter.ToString(), StringComparison.InvariantCultureIgnoreCase) >= 0;
                 if(article)
                 {
-                   System.Console.WriteLine("Give me an ... " + name[i]);
+                   System.Console.WriteLine("Give me an ... " + letter);
                 }
                 else
                 {
-                    System.Console.WriteLine("Give me a ..." + name[i]);
+                    System.Console.WriteLine("Give me a ..." + letter);
                 }
                  
             }
-            System.Console.WriteLine( name + " is awesome!");
-            System.Console.WriteLine("Hey, " + name + " when's your birthday?(MM/DD)");
+            System.Console.WriteLine( name.ToUpper() + " is AWESOME!");
+            System.Console.WriteLine("Hey, " + name + " when's your birthday? (MM/DD)");
             string bday = System.Console.ReadLine();
             DateTime input = Convert.ToDateTime(bday);
 
@@ -48,7 +48,7 @@ namespace ConsoleApplication1
                 // Difference in days.
                 int differenceInDays = ts.Days;
 
-                Console.WriteLine("Your birthday is " + differenceInDays + "days away!");
+                Console.WriteLine("Your birthday is " + differenceInDays + " days away!");
 
             }
            
