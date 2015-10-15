@@ -14,15 +14,18 @@ namespace ConsoleApplication1
            string name = System.Console.ReadLine(); 
            foreach(char letter in name.ToLower())
            {
-               bool article = "halfnorsemix".IndexOf(letter.ToString(), StringComparison.InvariantCultureIgnoreCase) >= 0;
-                if(article)
-                {
-                   System.Console.WriteLine("Give me an ... " + letter);
-                }
-                else
-                {
-                    System.Console.WriteLine("Give me a ..." + letter);
-                }
+               if (Char.IsLetter(letter))
+               {
+                   string mnemonic = "halfnorsemix";
+                   string article = "a ";
+
+                   if (mnemonic.Contains(letter))
+                   {
+                       article = "an";
+                   }
+
+                   System.Console.WriteLine("Give me " + article + " ... " + letter);
+               }
                  
             }
             System.Console.WriteLine( name.ToUpper() + " is AWESOME!");
